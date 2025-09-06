@@ -1,7 +1,7 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Setting from "./pages/Setting";
-import AddSubscription from "./pages/AddSubscription";
+import AddSubscriptionScreen from "./pages/AddSubscriptionScreen";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -16,7 +16,7 @@ function App(){
 
                 <Routes>
                     <Route path="/" element={ <Dashboard /> } />
-                    <Route path="/add" element={ <AddSubscription /> } />
+                    <Route path="/add" element={ <AddSubscriptionScreen /> } />
                     <Route path="/setting" element={ <Setting /> } />
                 </Routes>
 
