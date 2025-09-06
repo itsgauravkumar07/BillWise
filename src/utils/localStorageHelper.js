@@ -20,7 +20,10 @@ export const addSubscription = (newData) => {
 }
 
 export const deleteSubscription = (id) => {
+    if (id == null) return [];
+
     const existingArray = getSubscriptions();
-    const updatedArray = existingArray.filter( sub => sub.id !== id );
+    const updatedArray = existingArray.filter( sub => String(sub.id) !== String(id));
     saveSubscriptions(updatedArray);
+    return updatedArray;
 }
