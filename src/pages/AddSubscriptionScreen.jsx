@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { addSubscription } from "../utils/localStorageHelper";
+import Dashboard from "./Dashboard";
+
 
 const AddSubscriptionScreen = () => {
 
@@ -9,6 +11,7 @@ const AddSubscriptionScreen = () => {
     const[renewalDate, setRenewalDate] = useState("");
     const[category, setCategory] = useState("");
     const[note, setNote] = useState("");
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
