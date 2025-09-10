@@ -1,4 +1,4 @@
-import { getSubscriptions, deleteSubscription, updateSubscription } from "../utils/localStorageHelper";
+import { getSubscriptions, deleteSubscription, updateSubscription, savedCurrency} from "../utils/localStorageHelper";
 import { useEffect, useState } from "react";
 import Modal from "../components/Model";
 import EditForm from "../components/EditForm";
@@ -9,6 +9,7 @@ function Dashboard({}){
     const[subscriptions, setSubscriptions] = useState([]);
     const[isModalOpen, setIsModalOpen] = useState(false);
     const[selectedSub, SetSelectedSub] = useState(null);
+    const[currency, setCurrency] = useState(savedCurrency());
 
    useEffect(() => {
    const sub = getSubscriptions().filter(s => s && s.id && s.name);
@@ -32,7 +33,7 @@ function Dashboard({}){
         SetSelectedSub(null);
    };
 
-   const totalBill = subscriptions.reduce((acc, sub) => {
+   const totalMonthlyBill = subscriptions.reduce((acc, sub) => {
     if(sub.billingCycle === "Monthly"){
         return acc + sub.price;
     } else if(sub.billingCycle === "Yearly"){
@@ -41,23 +42,29 @@ function Dashboard({}){
     return acc;
    }, 0);
 
+   const totalYearlyBill = subscriptions.reduce((acc, sub) => {
+    return acc + sub.price * 12;
+   }, 0)
+
     return(
         <div>
             <h1>All your subscriptions</h1>
             <div>
-                <h1>Total monthly bill ${totalBill.toFixed(2)} </h1>
+                <p>Total active subscriptions: {subscriptions.length}</p>
+                <h1>Total monthly bill {currency}{totalMonthlyBill.toFixed(2)} </h1>
+                <h1>Total Yearly bill {currency}{totalYearlyBill}</h1>
 
                 {subscriptions.length > 0 ? subscriptions
                     .filter((sub) => sub && sub.id)
                     .map((sub) => (
                       
                     <li key={sub.id}>
-                        {sub.name} - ${sub.price} (Renewal: {sub.nextRenewal}) {sub.notes} {sub.category} {sub.billingCycle}
+                        {sub.name} -{currency} {sub.price} (Renewal: {sub.nextRenewal}) {sub.notes} {sub.category} {sub.billingCycle}
                         <button onClick={() => handleEdit(sub)}>Edit</button>
                         <button onClick={() => handleDelete(sub.id)}>Delete</button>
                     </li> 
                     )) : ( <p>No subscription found</p> )}
-                    
+
             </div>
 
                 <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>

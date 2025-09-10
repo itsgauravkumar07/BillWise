@@ -32,9 +32,9 @@ function Setting(){
            <span>Currency</span>
            <select name="CurrencySelector" value={currency} onChange={handleChangeCurrency}>
             <option value="">Currency preference</option>
-            <option value="INR">INR</option>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
+            <option value="₹">INR</option>
+            <option value="$">USD</option>
+            <option value="€">EUR</option>
            </select>
 
             {/* Dark mode toggle */}
