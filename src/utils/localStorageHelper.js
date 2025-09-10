@@ -14,6 +14,11 @@ export const saveSubscriptions = (subscriptionsArray) => {
 }
 
 export const addSubscription = (newData) => {
+    if(!newData || !newData.id || !newData.name){
+        console.warn("Skipping invalid subscriptions: ", newData);
+        return;
+    }
+
     const existingArray = getSubscriptions();
     const updatedArray = [...existingArray, newData];
     saveSubscriptions(updatedArray);
@@ -26,4 +31,15 @@ export const deleteSubscription = (id) => {
     const updatedArray = existingArray.filter( sub => String(sub.id) !== String(id));
     saveSubscriptions(updatedArray);
     return updatedArray;
+}
+
+export const updateSubscription = (updatedSub) => {   
+    const subs = getSubscriptions();
+
+    const updatedList = subs.map((sub) => 
+        sub.id === updatedSub.id ? updatedSub : sub
+    );
+
+    saveSubscriptions(updatedList);
+    return updatedList;
 }
