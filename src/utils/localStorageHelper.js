@@ -43,3 +43,31 @@ export const updateSubscription = (updatedSub) => {
     saveSubscriptions(updatedList);
     return updatedList;
 }
+
+
+
+// Setting page localStorages
+export const saveDarkMode = (state) => {
+    localStorage.setItem("darkMode", JSON.stringify(state));
+}
+
+export const savedDarkMode = () => {
+    return JSON.parse(localStorage.getItem("darkMode")) || false;
+}
+
+export const saveRenewalToggleState = (state) => {
+    localStorage.setItem("renewal", JSON.stringify(state));
+}
+
+export const savedRenewalToggleState = () => {
+    return JSON.parse(localStorage.getItem("renewal")) || false;
+}
+
+
+export const saveCurrency = (currency) => {
+    localStorage.setItem("currency" , JSON.stringify(currency));
+}
+
+export const savedCurrency = () => {
+    return JSON.parse(localStorage.getItem("currency")) || "";
+}
