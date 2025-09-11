@@ -47,23 +47,55 @@ function Dashboard({}){
 
     return(
         <div>
-            <div className="text-center mt-20 mb-20">
+            <div className="text-center mt-20 mb-20 ">
                 <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-800">Your Subscriptions Dashboard</h1>
                 <p className="font-medium text-sm sm:text-base md:text-lg lg:text-lg text-gray-600 mt-2">Keep track of all your susbcriptions in one beautiful, organized place</p>
             </div>
             
-            <div className="flex flex-col md:flex-row lg:flex-row justify-between">
-                <div className="bg-amber-200 h-40 rounded-2xl p-6 ">
+            <div className="flex flex-col md:flex-row lg:flex-row justify-between gap-4">
+
+                 {/* Card 01 */}
+                <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-3">
                     <div className="flex justify-between items-center">
-                        <p className="font-medium text-base text-gray-500">Active Subscriptions</p>
-                        <p className="bg-gray-500 p-2 rounded-md">{currency}</p>
+                        <p className="font-medium text-base text-gray-500">Yearly Total</p>
+                        <div className="flex items-center justify-center h-8 w-8 bg-gray-200 text-center rounded-lg">
+                            <p className="text-lg font-medium">{currency}</p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col mt-10">
+                        <p className="text-2xl font-bold text-gray-800">{currency}{totalYearlyBill}</p>
+                        <p className="text-sm text-gray-500">Annual Projection</p>
                     </div>
                     
-                    <p>{subscriptions.length}</p>
                 </div>
                 
-                <h1>Total monthly bill {currency}{totalMonthlyBill.toFixed(2)} </h1>
-                <h1>Total Yearly bill {currency}{totalYearlyBill}</h1>
+               {/* Card 02 */}
+                <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-3">
+                    <div className="flex justify-between items-center">
+                        <p className="font-medium text-base text-gray-500">Monthly Total</p>
+                        <div className="flex items-center justify-center h-8 w-8 bg-gray-200 text-center rounded-lg">
+                            <p className="text-lg font-medium">{currency}</p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col mt-10">
+                        <p className="text-2xl font-bold text-gray-800">{currency}{totalMonthlyBill.toFixed(2)}</p>
+                        <p className="text-sm text-gray-500">Per month spending</p>
+                    </div>
+                </div>
+                
+                 {/* Card 03*/} 
+                    <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col justify-between shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-3">
+                    <div className="flex justify-between items-center">
+                        <p className="font-medium text-base text-gray-500">Active Subscriptions</p>
+                        <div className="flex items-center justify-center h-8 w-8 bg-gray-200 text-center rounded-lg">
+                            <p className="text-lg font-medium">{currency}</p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col ">
+                        <p className="text-2xl font-bold text-gray-800">{subscriptions.length}</p>
+                        <p className="text-sm text-gray-500">Service Tracked</p>
+                    </div>
+                </div>
             </div>
 
             <div>
