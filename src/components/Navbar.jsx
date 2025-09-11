@@ -11,7 +11,7 @@ function Navbar(){
   ];
 
   return (
-    <nav className="w-full bg-white flex items-center justify-between mt-5 relative">
+    <nav className="h-20 w-full bg-white flex items-center justify-between relative px-10">
       {/* Logo */}
       <div>
         <img src={logo} alt="logo" className="h-14" />
@@ -24,7 +24,7 @@ function Navbar(){
             key={link.to}
             to={link.to}
             className={({ isActive }) =>
-              `px-3 py-2 font-medium hover:text-indigo-500 ${
+              `px-3 py-2 text-lg font-medium hover:text-indigo-500 ${
                 isActive ? "text-indigo-500" : "text-gray-800"
               }`
             }
@@ -49,7 +49,7 @@ function Navbar(){
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `px-3 py-2 font-medium hover:text-indigo-500 ${
+                `px-3 py-2 text-lg font-medium hover:text-indigo-500 ${
                   isActive ? "text-indigo-500" : "text-gray-800"
                 }`
               }

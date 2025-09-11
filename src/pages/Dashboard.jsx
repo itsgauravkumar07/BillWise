@@ -2,6 +2,11 @@ import { getSubscriptions, deleteSubscription, updateSubscription, savedCurrency
 import { useEffect, useState } from "react";
 import Modal from "../components/Model";
 import EditForm from "../components/EditForm";
+import subicon from '../assets/subscription.png'
+import wallet from '../assets/wallet.png';
+import deleteicon from '../assets/delete.png';
+import edit from '../assets/edit.png'
+import oops from '../assets/oops.png'
 
 function Dashboard({}){
 
@@ -46,30 +51,16 @@ function Dashboard({}){
    }, 0)
 
     return(
-        <div>
+        <div className="flex-grow px-10">
             <div className="text-center mt-20 mb-20 ">
                 <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-800">Your Subscriptions Dashboard</h1>
                 <p className="font-medium text-sm sm:text-base md:text-lg lg:text-lg text-gray-600 mt-2">Keep track of all your susbcriptions in one beautiful, organized place</p>
             </div>
             
+            {/* All Summary card */}
             <div className="flex flex-col md:flex-row lg:flex-row justify-between gap-4">
-
-                 {/* Card 01 */}
-                <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-3">
-                    <div className="flex justify-between items-center">
-                        <p className="font-medium text-base text-gray-500">Yearly Total</p>
-                        <div className="flex items-center justify-center h-8 w-8 bg-gray-200 text-center rounded-lg">
-                            <p className="text-lg font-medium">{currency}</p>
-                        </div>
-                    </div>
-                    <div className="flex flex-col mt-10">
-                        <p className="text-2xl font-bold text-gray-800">{currency}{totalYearlyBill}</p>
-                        <p className="text-sm text-gray-500">Annual Projection</p>
-                    </div>
-                    
-                </div>
                 
-               {/* Card 02 */}
+                {/* Card 01 */}
                 <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-3">
                     <div className="flex justify-between items-center">
                         <p className="font-medium text-base text-gray-500">Monthly Total</p>
@@ -82,13 +73,30 @@ function Dashboard({}){
                         <p className="text-sm text-gray-500">Per month spending</p>
                     </div>
                 </div>
+
+
+                 {/* Card 02 */}
+                <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-3">
+                    <div className="flex justify-between items-center">
+                        <p className="font-medium text-base text-gray-500">Yearly Total</p>
+                        <div className="flex items-center justify-center h-8 w-8 bg-gray-200 text-center rounded-lg">
+                            <p className="text-lg font-medium"><img src={wallet} alt="" className="h-5 w-5"/></p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col mt-10">
+                        <p className="text-2xl font-bold text-gray-800">{currency}{totalYearlyBill}</p>
+                        <p className="text-sm text-gray-500">Annual Projection</p>
+                    </div>
+                    
+                </div>
+                
                 
                  {/* Card 03*/} 
                     <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col justify-between shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-3">
                     <div className="flex justify-between items-center">
                         <p className="font-medium text-base text-gray-500">Active Subscriptions</p>
                         <div className="flex items-center justify-center h-8 w-8 bg-gray-200 text-center rounded-lg">
-                            <p className="text-lg font-medium">{currency}</p>
+                            <p className="text-lg font-medium"><img src={subicon} alt="" className="h-5 w-5"/></p>
                         </div>
                     </div>
                     <div className="flex flex-col ">
@@ -98,20 +106,60 @@ function Dashboard({}){
                 </div>
             </div>
 
-            <div>
-                {subscriptions.length > 0 ? subscriptions
+            {subscriptions.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 justify-between gap-4 mt-20 mb-20">
+                {subscriptions
                     .filter((sub) => sub && sub.id)
                     .map((sub) => (
-                      
-                    <li key={sub.id}>
-                        {sub.name} -{currency} {sub.price} (Renewal: {sub.nextRenewal}) {sub.notes} {sub.category} {sub.billingCycle}
-                        <button onClick={() => handleEdit(sub)} className="bg-indigo-500">Edit</button>
-                        <button onClick={() => handleDelete(sub.id)}>Delete</button>
-                    </li> 
-                    )) : ( <p>No subscription found</p> )}
+                    
+                        <div key={sub.id} 
+                        className="bg-white w-full h-60 rounded-2xl p-6 shadow-md hover:translate-y-1 hover:scale-102 hover:shadow-lg delay-150 duration-200 mt-10"
+                        >
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <div className="text-2xl font-bold">{sub.name}</div>
+                                    <div className="bg-indigo-400 text-white py-0.5 px-3 text-xs rounded-2xl border-0.2 mt-2 inline-block font-mono">{sub.category}</div>
+                                </div>
+                                
+                                <div className="flex gap-1">
+                                    
+                                    <button onClick={() => handleEdit(sub)} className="flex hover:bg-indigo-300 px-2 py-2 rounded itmes-center justify-center">
+                                        <img src={edit} alt="" className="w-5 h-5"/>
+                                    </button>
+                                    
+                                    
+                                    <button onClick={() => handleDelete(sub.id)} className="flex hover:bg-red-200 px-2 py-2 rounded itmes-center justify-center"> 
+                                        <img src={deleteicon} alt="" className="h-5 w-5"/>
+                                    </button>
+                                    
+                                    
+                                </div>
+                            </div>
 
-            </div>
+                            <div className="flex justify-between mt-5 items-center">
+                                <p className="text-gray-500 font-medium">Price</p>
+                                <div className="text-lg font-bold">{currency}{sub.price}</div>
+                            </div> 
 
+                            <div className="flex justify-between mt-3">
+                                <p className="text-gray-500 font-medium">Billing</p>
+                                <div className="bg-gray-100 text-black py-1 px-3 text-xs rounded-2xl border-0.2 mt-2 inline-block font-medium border-white">{sub.billingCycle}</div>
+                            </div> 
+
+                            <div className="flex justify-between mt-3">
+                                <p className="text-gray-500 font-medium">Next Payment</p>
+                                <div className="text-base font-medium">{sub.nextRenewal}</div>
+                            </div> 
+                        </div>
+                     ))}
+                    </div>
+                ) : ( 
+                    <div className="flex items-center justify-center gap-4 flex-col text-center w-full my-20">
+                        <img src={oops} alt="" className="h-10 w-10"/>
+                         <p>Oop's No subscription found</p>
+                    </div>
+                    )}
+            
                 <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                     {selectedSub && (
                         <EditForm 
