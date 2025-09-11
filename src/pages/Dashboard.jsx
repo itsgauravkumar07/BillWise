@@ -47,12 +47,26 @@ function Dashboard({}){
 
     return(
         <div>
-            <h1>All your subscriptions</h1>
-            <div>
-                <p>Total active subscriptions: {subscriptions.length}</p>
+            <div className="text-center mt-20 mb-20">
+                <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-800">Your Subscriptions Dashboard</h1>
+                <p className="font-medium text-sm sm:text-base md:text-lg lg:text-lg text-gray-600 mt-2">Keep track of all your susbcriptions in one beautiful, organized place</p>
+            </div>
+            
+            <div className="flex flex-col md:flex-row lg:flex-row justify-between">
+                <div className="bg-amber-200 h-40 rounded-2xl p-6 ">
+                    <div className="flex justify-between items-center">
+                        <p className="font-medium text-base text-gray-500">Active Subscriptions</p>
+                        <p className="bg-gray-500 p-2 rounded-md">{currency}</p>
+                    </div>
+                    
+                    <p>{subscriptions.length}</p>
+                </div>
+                
                 <h1>Total monthly bill {currency}{totalMonthlyBill.toFixed(2)} </h1>
                 <h1>Total Yearly bill {currency}{totalYearlyBill}</h1>
+            </div>
 
+            <div>
                 {subscriptions.length > 0 ? subscriptions
                     .filter((sub) => sub && sub.id)
                     .map((sub) => (
