@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Modal from "../components/Model";
 import EditForm from "../components/EditForm";
 
-
 function Dashboard({}){
 
     const[subscriptions, setSubscriptions] = useState([]);
@@ -60,7 +59,7 @@ function Dashboard({}){
                       
                     <li key={sub.id}>
                         {sub.name} -{currency} {sub.price} (Renewal: {sub.nextRenewal}) {sub.notes} {sub.category} {sub.billingCycle}
-                        <button onClick={() => handleEdit(sub)}>Edit</button>
+                        <button onClick={() => handleEdit(sub)} className="bg-indigo-500">Edit</button>
                         <button onClick={() => handleDelete(sub.id)}>Delete</button>
                     </li> 
                     )) : ( <p>No subscription found</p> )}
