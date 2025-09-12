@@ -12,7 +12,7 @@ const AddSubscriptionScreen = () => {
     const[renewalDate, setRenewalDate] = useState("");
     const[category, setCategory] = useState("");
    
-   
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -112,7 +112,7 @@ const AddSubscriptionScreen = () => {
                     <button type="submit" className="w-full rounded-lg bg-indigo-600 px-4 py-2 text-white font-semibold mt-5 hover:bg-indigo-700 hover:shadow-md">Add Subscription</button>
                     
                 </form>
-                
+                <button className="w-full rounded-lg bg-white px-4 py-2 text-gray-800 font-semibold mt-4 border-1 border-gray-300 hover:shadow-sm" onClick={() => navigate("/")}>Cancel</button>
             </div>
         </div>
     )
