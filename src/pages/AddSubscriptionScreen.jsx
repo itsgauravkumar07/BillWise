@@ -101,7 +101,7 @@ const AddSubscriptionScreen = () => {
                             <label className="text-base font-semibold text-gray-800">Billing cycle</label>
                             <select name = "BillCycle" value={billCycle} onChange={(e) => setBillCycle(e.target.value)} className="rounded-lg border-gray-500 border-1 px-2 py-1.5">
                                 
-                                <option value="Monthly" className="rounded-2xl">Monthly</option>
+                                <option value="Monthly" >Monthly</option>
                                 <option value="Yearly" >Yearly</option>
 
                             </select>
