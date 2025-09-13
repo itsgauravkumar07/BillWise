@@ -54,12 +54,12 @@ function Dashboard({}){
 
     return(
         <div className="flex-grow px-10">
-            <div className="text-center py-20 bg-white rounded-2xl shadow-md my-10">
+            <div className="text-center py-20 bg-white rounded-2xl shadow-md my-4">
                 <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-800">Your Subscriptions Dashboard</h1>
                 <p className="font-medium text-sm sm:text-base md:text-lg lg:text-lg text-gray-600 mt-2">Keep track of all your susbcriptions in one beautiful, organized place</p>
             </div>
             
-             <div className="flex flex-row gap-2 items-center-safe mt-17 mb-4">
+             <div className="flex flex-row gap-2 items-center-safe mt-12 mb-4">
                 <img src={stats} alt="" className="h-6 w-6"/>
                 <h1 className="text-2xl font-semibold text-gray-800">Financial Overview</h1>
             </div>
@@ -166,7 +166,7 @@ function Dashboard({}){
                      ))}
                     </div>
                 ) : ( 
-                    <div className="flex items-center justify-center gap-4 flex-col text-center w-full my-30 shadow-2xl h-50 rounded-2xl">
+                    <div className="flex items-center justify-center gap-4 flex-col text-center w-full my-10 py-5 shadow-2xl h-50 rounded-2xl">
                         <img src={oops} alt="" className="h-10 w-10 opacity-80"/>
                          <p className="text-base text-gray-700">Oop's No subscription found</p>
                     </div>
