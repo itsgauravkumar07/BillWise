@@ -39,7 +39,7 @@ function Setting(){
             </div>
             
             {/* currency selector */}
-            <div className="flex flex-col gap-4 border-1 border-gray-300 px-6 py-6 rounded-2xl">
+            <div className="flex flex-col gap-4 border-1 border-gray-300 bg-white px-6 py-6 rounded-2xl">
                 <p className="text-lg font-bold text-gray-800">Preference</p>
 
                 <div className="flex flex-row justify-between ">
@@ -57,7 +57,7 @@ function Setting(){
 
             {/* Dark mode toggle */}
             
-                <div className="flex flex-col gap-4 border-1 border-gray-300 px-6 py-6 rounded-2xl mt-6">
+                <div className="flex flex-col gap-4 border-1 border-gray-300 bg-white px-6 py-6 rounded-2xl mt-6">
                     <span className="text-lg font-bold text-gray-800">Appearance</span>
                     
                     <div className="flex flex-row justify-between">
@@ -82,7 +82,7 @@ function Setting(){
            
             
             {/* Renewal Toggle */}
-            <div className="flex flex-col gap-4 border-1 border-gray-300 px-6 py-6 rounded-2xl mt-6">
+            <div className="flex flex-col gap-4 border-1 border-gray-300 bg-white px-6 py-6 rounded-2xl mt-6">
                 <span className="text-lg font-bold text-gray-800">Appearance</span>
                 
                 <div className="flex flex-row justify-between">
