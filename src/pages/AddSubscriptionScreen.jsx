@@ -11,32 +11,56 @@ const AddSubscriptionScreen = () => {
     const[billCycle, setBillCycle] = useState("");
     const[renewalDate, setRenewalDate] = useState("");
     const[category, setCategory] = useState("");
+
+    const[error, setError] = useState({
+        name: "",
+        price: "",
+        renewalDate: "",
+        billCycle: "",
+        category: ""
+    });
    
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // const showError = ({
+
+        // name: "Name can't be empyt",
+        // price: "Enter valid price",
+        // renewalDate: "Enter valid renewal date",
+        // billCycle: "Enter valid bill cycle",
+        // category: "Enter valid category"
+        
+        // });
+
+
+        if(!name.trim()){
+            setError(prev => ({...prev, name: "Name can't be empyt"}));
+            return;
+        }
+
         if(!price || price <= 0){
-            alert("Please enter Valid price");
+           setError(prev => ({...prev, price: "Enter valid price"}));
             return;
         }
         
         if(!renewalDate){
-            alert("Please enter date correctly");
+            setError(prev => ({...prev, renewalDate: "Enter valid renewal date"}));
             return;
         } 
         
+        if(!category){
+            setError(prev => ({...prev, category: "Enter valid category"}));
+        }
+
         if(!billCycle){
-            alert("Please enter Valid Billing cycle");
+            setError(prev => ({...prev, billCycle: "Enter valid bill cycle"}));
             return;
         }
 
-        if(!name.trim()) {
-            alert("please enter a name");
-            return;
-        }
-
+        
         const subscription = {
 
         id: Date.now().toString(),
@@ -47,7 +71,10 @@ const AddSubscriptionScreen = () => {
         nextRenewal: renewalDate,
         category: category.trim(),
         createdAt: new Date().toISOString()   
+
+        
     }
+        setError("");
 
         addSubscription(subscription);
         alert("Subscription Added successfully!!");
@@ -77,6 +104,7 @@ const AddSubscriptionScreen = () => {
                     <div className="flex flex-col gap-2.5">
                         <label className="text-base font-semibold text-gray-800">Subscription Name </label>
                         <input type="text" placeholder="e.g, Netfilx, Spotify" value={name} onChange={(e) => setName(e.target.value)} className="border-gray-500 border-1 rounded-lg px-2 py-1.5"/>  
+                         {error && <div>{error.name}</div>}
                     </div>
                     
                     
@@ -86,12 +114,14 @@ const AddSubscriptionScreen = () => {
                         <div className="flex flex-col gap-2.5 w-full mt-5">
                             <label className="text-base font-semibold text-gray-800">Price</label>
                             <input type="number" placeholder="$ 10.78" value={price} onChange={(e) => setPrice(e.target.value)} className="border-gray-500 border-1 rounded-lg px-2 py-1.5"/>
+                            {error && <div>{error.price}</div>}
                         </div>
 
                         {/* Renewal Date section */}
                         <div className="flex flex-col gap-2.5 w-full mt-5 justify-end">
                             <label className="text-base font-semibold text-gray-800">Renewal Date </label>
                             <input type="date" value={renewalDate} onChange={(e) => setRenewalDate(e.target.value)} className="w-full rounded-lg border-gray-500 border-1 px-2 py-1.5"  />  
+                            {error && <div>{error.renewalDate}</div>}
                         </div> 
                     </div>
 
@@ -102,6 +132,7 @@ const AddSubscriptionScreen = () => {
                         <div className="flex flex-col gap-2.5 mt-5 w-full">
                             <label className="text-base font-semibold text-gray-800">Category</label>
                             <input type="text" placeholder="e.g, Entertainment..." value={category} onChange={(e) => setCategory(e.target.value)} className="border-gray-500 border-1 rounded-lg px-2 py-1.5" />
+                             {error && <div>{error.category}</div>}
                         </div>
                         
                         {/* Billing cycle section  */}
@@ -113,6 +144,7 @@ const AddSubscriptionScreen = () => {
                                 <option value="Yearly" >Yearly</option>
 
                             </select>
+                             {error && <div>{error.billCycle}</div>}
                         </div>
                     
                     </div>
