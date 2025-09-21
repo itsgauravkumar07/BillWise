@@ -50,7 +50,7 @@ const AddSubscriptionScreen = () => {
             setError(prev => ({...prev, renewalDate: "Enter valid renewal date"}));
             return;
         } 
-        
+
         if(!category){
             setError(prev => ({...prev, category: "Enter valid category"}));
         }
@@ -104,7 +104,7 @@ const AddSubscriptionScreen = () => {
                     <div className="flex flex-col gap-2.5">
                         <label className="text-base font-semibold text-gray-800">Subscription Name </label>
                         <input type="text" placeholder="e.g, Netfilx, Spotify" value={name} onChange={(e) => setName(e.target.value)} className="border-gray-500 border-1 rounded-lg px-2 py-1.5"/>  
-                         {error && <div>{error.name}</div>}
+                         {error && <div className="text-red-500 px-2 text-sm">{error.name}</div>}
                     </div>
                     
                     
@@ -114,14 +114,14 @@ const AddSubscriptionScreen = () => {
                         <div className="flex flex-col gap-2.5 w-full mt-5">
                             <label className="text-base font-semibold text-gray-800">Price</label>
                             <input type="number" placeholder="$ 10.78" value={price} onChange={(e) => setPrice(e.target.value)} className="border-gray-500 border-1 rounded-lg px-2 py-1.5"/>
-                            {error && <div>{error.price}</div>}
+                            {error && <div className="text-red-500 px-2 text-sm">{error.price}</div>}
                         </div>
 
                         {/* Renewal Date section */}
                         <div className="flex flex-col gap-2.5 w-full mt-5 justify-end">
                             <label className="text-base font-semibold text-gray-800">Renewal Date </label>
                             <input type="date" value={renewalDate} onChange={(e) => setRenewalDate(e.target.value)} className="w-full rounded-lg border-gray-500 border-1 px-2 py-1.5"  />  
-                            {error && <div>{error.renewalDate}</div>}
+                            {error && <div className="text-red-500 px-2 text-sm">{error.renewalDate}</div>}
                         </div> 
                     </div>
 
@@ -132,7 +132,7 @@ const AddSubscriptionScreen = () => {
                         <div className="flex flex-col gap-2.5 mt-5 w-full">
                             <label className="text-base font-semibold text-gray-800">Category</label>
                             <input type="text" placeholder="e.g, Entertainment..." value={category} onChange={(e) => setCategory(e.target.value)} className="border-gray-500 border-1 rounded-lg px-2 py-1.5" />
-                             {error && <div>{error.category}</div>}
+                             {error && <div className="text-red-500 px-2 text-sm">{error.category}</div>}
                         </div>
                         
                         {/* Billing cycle section  */}
@@ -140,11 +140,12 @@ const AddSubscriptionScreen = () => {
                             <label className="text-base font-semibold text-gray-800">Billing cycle</label>
                             <select name = "BillCycle" value={billCycle} onChange={(e) => setBillCycle(e.target.value)} className="rounded-lg border-gray-500 border-1 px-2 py-1.5">
                                 
+                                <option value="" >Category</option>
                                 <option value="Monthly" >Monthly</option>
                                 <option value="Yearly" >Yearly</option>
 
                             </select>
-                             {error && <div>{error.billCycle}</div>}
+                             {error && <div className="text-red-500 px-2 text-sm">{error.billCycle}</div>}
                         </div>
                     
                     </div>
