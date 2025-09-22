@@ -27,16 +27,14 @@ function Setting(){
 
     return(
         <div className="flex-grow px-10">
-           
-            
 
-            <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
                 
            <div className="flex flex-col justify-center w-full md:w-2xl lg:w-2xl px-5 py-5">
            
-            <div className="flex justify-start flex-row items-center">
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900  px-5 mt-5 mb-6">Setting</h1>
-            </div>
+                <div className="flex justify-start flex-row items-center">
+                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900  px-5 mt-5 mb-6">Setting</h1>
+                </div>
             
             {/* currency selector */}
             <div className="flex flex-col gap-4 border-1 border-gray-300 bg-white px-6 py-6 rounded-2xl">

@@ -67,7 +67,7 @@ function Dashboard({}){
             <div className="flex flex-col md:flex-row lg:flex-row justify-between gap-4">
                 
                 {/* Card 01 */}
-                <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-3">
+                <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-8">
                     <div className="flex justify-between items-center">
                         <p className="font-medium text-base text-gray-500">Monthly Total</p>
                         <div className="flex items-center justify-center h-8 w-8 bg-gray-200 text-center rounded-lg">
@@ -112,7 +112,7 @@ function Dashboard({}){
                 </div>
             </div>
 
-            <div className="flex flex-row gap-2 items-center-safe mt-20 mb-4">
+            <div className="flex flex-row gap-2 items-center-safe mt-20 mb-8">
                 <img src={booking} alt="" className="h-6 w-6"/>
                 <h1 className="text-2xl font-semibold text-gray-800">Subscription Details</h1>
             </div>
@@ -125,23 +125,23 @@ function Dashboard({}){
                     .map((sub) => (
                     
                         <div key={sub.id} 
-                        className="bg-white w-full h-60 rounded-2xl p-6 shadow-md hover:translate-y-1 hover:scale-102 hover:shadow-lg delay-150 duration-200"
+                        className="bg-white w-full h-60 rounded-2xl p-8 shadow-md hover:translate-y-1 hover:scale-102 hover:shadow-lg delay-150 duration-200"
                         >
                             <div className="flex justify-between items-center">
                                 <div>
-                                    <div className="text-2xl font-bold">{sub.name}</div>
-                                    <div className="bg-indigo-400 text-white py-0.5 px-3 text-xs rounded-2xl border-0.2 mt-2 inline-block font-mono">{sub.category}</div>
+                                    <div className="text-lg font-bold">{sub.name}</div>
+                                    <div className="bg-indigo-400 text-white py-0.5 px-1.5 text-xs rounded-2xl border-0.2 mt-2 inline-block font-mono">{sub.category}</div>
                                 </div>
                                 
                                 <div className="flex gap-1">
                                     
-                                    <button onClick={() => handleEdit(sub)} className="flex hover:bg-indigo-300 px-2 py-2 rounded itmes-center justify-center">
-                                        <img src={edit} alt="" className="w-5 h-5"/>
+                                    <button onClick={() => handleEdit(sub)} className="flex hover:bg-indigo-200 px-1 py-1 rounded-lg itmes-center justify-center">
+                                        <img src={edit} alt="" className="w-4 h-4"/>
                                     </button>
                                     
                                     
-                                    <button onClick={() => handleDelete(sub.id)} className="flex hover:bg-red-200 px-2 py-2 rounded itmes-center justify-center"> 
-                                        <img src={deleteicon} alt="" className="h-5 w-5"/>
+                                    <button onClick={() => handleDelete(sub.id)} className="flex hover:bg-red-200 px-1 py-1 rounded-lg itmes-center justify-center"> 
+                                        <img src={deleteicon} alt="" className="h-4 w-4"/>
                                     </button>
                                     
                                     
@@ -149,17 +149,17 @@ function Dashboard({}){
                             </div>
 
                             <div className="flex justify-between mt-5 items-center">
-                                <p className="text-gray-500 font-medium">Price</p>
+                                <p className="text-gray-700">Price</p>
                                 <div className="text-lg font-bold">{currency}{sub.price}</div>
                             </div> 
 
-                            <div className="flex justify-between mt-3">
-                                <p className="text-gray-500 font-medium">Billing</p>
-                                <div className="bg-gray-100 text-black py-1 px-3 text-xs rounded-2xl border-0.2 mt-2 inline-block font-medium border-white">{sub.billingCycle}</div>
+                            <div className="flex justify-between mt-2">
+                                <p className="text-gray-700">Billing</p>
+                                <div className="bg-gray-100 text-black py-0.5 px-3 text-xs rounded-2xl border-0.2 mt-2 inline-block font-medium border-white">{sub.billingCycle}</div>
                             </div> 
 
-                            <div className="flex justify-between mt-3">
-                                <p className="text-gray-500 font-medium">Next Payment</p>
+                            <div className="flex justify-between mt-2">
+                                <p className="text-gray-700">Next Payment</p>
                                 <div className="text-base font-medium">{sub.nextRenewal}</div>
                             </div> 
                         </div>
