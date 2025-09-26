@@ -49,6 +49,18 @@ function Setting(){
                     <option value="€">EUR</option>
                  </select>
                </div>
+
+                <div className="settingCard">
+                <div className="SettingCardHeading">
+                    <ExclamationCircleIcon className="cardIcon text-black"/>
+                    <h1 className="cardHeading text-black font-semibold">About</h1>
+                </div>
+
+                <div className="settingCardBody">
+                    <h1 className="cardHeading">TrackWise</h1>
+                    <p className="cardHeading font-normal pt-4">Trackwise is a simple expense tracker that helps you manage daily spending, track categories, and stay on top of your finances. Keep track of where your money goes and make informed financial decisions.</p>
+                </div>
+            </div>
                
             </div>
            
