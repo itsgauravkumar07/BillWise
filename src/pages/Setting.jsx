@@ -28,93 +28,37 @@ function Setting(){
     return(
         <div className="flex-grow px-10">
 
-        <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center">
+                        
+                <div className="flex flex-col justify-center w-full md:w-2xl lg:w-2xl px-5 py-5">
                 
-           <div className="flex flex-col justify-center w-full md:w-2xl lg:w-2xl px-5 py-5">
-           
-                <div className="flex justify-start flex-row items-center">
-                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900  px-5 mt-5 mb-6">Setting</h1>
-                </div>
-            
-            {/* currency selector */}
-            <div className="flex flex-col gap-4 border-1 border-gray-300 bg-white px-6 py-6 rounded-2xl">
-                <p className="text-lg font-bold text-gray-800">Preference</p>
-
-                <div className="flex flex-row justify-between ">
-                    <span className="text-base font-bold text-gray-800">Currency</span>        
-                 <select name="CurrencySelector" value={currency} onChange={handleChangeCurrency} className="rounded-lg border-gray-500 border-1 px-2 py-1.5" >
-                
-                    <option value="₹">INR</option>
-                    <option value="$">USD</option>
-                    <option value="€">EUR</option>
-                 </select>
-               </div>
-
-                <div className="settingCard">
-                <div className="SettingCardHeading">
-                    <ExclamationCircleIcon className="cardIcon text-black"/>
-                    <h1 className="cardHeading text-black font-semibold">About</h1>
-                </div>
-
-                <div className="settingCardBody">
-                    <h1 className="cardHeading">TrackWise</h1>
-                    <p className="cardHeading font-normal pt-4">Trackwise is a simple expense tracker that helps you manage daily spending, track categories, and stay on top of your finances. Keep track of where your money goes and make informed financial decisions.</p>
-                </div>
-            </div>
-               
-            </div>
-           
-
-            {/* Dark mode toggle */}
-            
-                <div className="flex flex-col gap-4 border-1 border-gray-300 bg-white px-6 py-6 rounded-2xl mt-6">
-                    <span className="text-lg font-bold text-gray-800">Appearance</span>
-                    
-                    <div className="flex flex-row justify-between">
-
-                        <span className="text-base font-bold text-gray-800">Dark mode</span>
-
-                        <div className={ `w-12 h-6 rounded-full p-1 flex ${
-                            darkMode ? "bg-green-500" : "bg-gray-300"
-                        }`} >
-                            <button
-                                onClick={handleDarkMode} 
-                                className={`bg-white w-4 h-4 rounded-full shadow-md transform transition ${
-                                    darkMode ? "translate-x-6" : "translate-x-0"
-                                }`}
-                            >
-
-                            </button>
+                        <div className="flex justify-start flex-row items-center">
+                            <h1 className="text-3xl md:text-4xl font-bold text-gray-900  px-5 mt-5 mb-6">Setting</h1>
                         </div>
-                    </div>
                     
-                </div>
-           
-            
-            {/* Renewal Toggle */}
-            <div className="flex flex-col gap-4 border-1 border-gray-300 bg-white px-6 py-6 rounded-2xl mt-6">
-                <span className="text-lg font-bold text-gray-800">Appearance</span>
-                
-                <div className="flex flex-row justify-between">
-                <span className="text-base font-bold text-gray-800">Renewal Remindes</span>
-                <div className={ `w-12 h-6 rounded-full p-1 flex ${
-                    renewalToggle ? "bg-green-500" : "bg-gray-300"
-                }`} >
-                    <button
-                        onClick={handleRenewalToggle} 
-                        className={`bg-white w-4 h-4 rounded-full shadow-md transform transition ${
-                            renewalToggle ? "translate-x-6" : "translate-x-0"
-                        }`}
-                    ></button>
-                </div>
+                        {/* currency selector */}
+                        <div className="flex flex-col gap-4 border-1 border-gray-300 bg-white px-6 py-6 rounded-2xl">
+                            <p className="text-lg font-bold text-gray-800">Preference</p>
 
+                            <div className="flex flex-row justify-between ">
+                                <span className="text-base font-bold text-gray-800">Currency</span>        
+                                <select name="CurrencySelector" value={currency} onChange={handleChangeCurrency} className="rounded-lg border-gray-500 border-1 px-2 py-1.5" >
+                                
+                                    <option value="₹">INR</option>
+                                    <option value="$">USD</option>
+                                    <option value="€">EUR</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-4 border-1 border-gray-300 bg-white px-6 py-6 rounded-2xl mt-5">
+                            
+                            <h1 className="text-lg font-bold text-gray-800">About</h1>
+                            <p className="text-sm text-gray-900">Billwise helps you take control of your recurring expenses. Track every subscription, get renewal reminders, and stay within budget — all in one simple dashboard. No more wasted money. No more surprises. Just smarter subscription management.</p>
+
+                        </div>
+                </div>
             </div>
-            </div>
-            
-        
-            </div>
-            </div>
-            
         </div>
     )
 }

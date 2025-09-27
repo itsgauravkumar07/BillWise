@@ -67,7 +67,7 @@ function Dashboard({}){
             <div className="flex flex-col md:flex-row lg:flex-row justify-between gap-4">
                 
                 {/* Card 01 */}
-                <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-8">
+                <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-8 md:mt-3 lg:mt-3">
                     <div className="flex justify-between items-center">
                         <p className="font-medium text-base text-gray-500">Monthly Total</p>
                         <div className="flex items-center justify-center h-8 w-8 bg-gray-200 text-center rounded-lg">
