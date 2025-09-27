@@ -67,10 +67,10 @@ function Dashboard({}){
             <div className="flex flex-col md:flex-row lg:flex-row justify-between gap-4">
                 
                 {/* Card 01 */}
-                <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-8 md:mt-3 lg:mt-3">
+                <div className="bg-blue-50 w-full h-44 rounded-2xl p-6 flex flex-col shadow-sm mt-8 md:mt-3 lg:mt-3 border-1 border-gray-400">
                     <div className="flex justify-between items-center">
                         <p className="font-medium text-base text-gray-500">Monthly Total</p>
-                        <div className="flex items-center justify-center h-8 w-8 bg-gray-200 text-center rounded-lg">
+                        <div className="flex items-center justify-center h-8 w-8 bg-white border-1 border-gray-300 text-center rounded-lg">
                             <p className="text-lg font-medium">{currency}</p>
                         </div>
                     </div>
@@ -82,10 +82,10 @@ function Dashboard({}){
 
 
                  {/* Card 02 */}
-                <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-3">
+                <div className="bg-fuchsia-50 w-full h-44 rounded-2xl p-6 flex flex-col shadow-sm mt-3 border-1 border-gray-400">
                     <div className="flex justify-between items-center">
                         <p className="font-medium text-base text-gray-500">Yearly Total</p>
-                        <div className="flex items-center justify-center h-8 w-8 bg-gray-200 text-center rounded-lg">
+                        <div className="flex items-center justify-center h-8 w-8 bg-white border-1 border-gray-300 text-center rounded-lg">
                             <p className="text-lg font-medium"><img src={wallet} alt="" className="h-5 w-5"/></p>
                         </div>
                     </div>
@@ -98,10 +98,10 @@ function Dashboard({}){
                 
                 
                  {/* Card 03*/} 
-                    <div className="bg-white w-full h-44 rounded-2xl p-6 flex flex-col justify-between shadow-lg hover:translate-y-1 hover:scale-102 hover:shadow-2xl delay-150 duration-200 mt-3">
+                    <div className="bg-orange-50 w-full h-44 rounded-2xl p-6 flex flex-col justify-between shadow-sm mt-3 border-1 border-gray-400">
                     <div className="flex justify-between items-center">
                         <p className="font-medium text-base text-gray-500">Active Subscriptions</p>
-                        <div className="flex items-center justify-center h-8 w-8 bg-gray-200 text-center rounded-lg">
+                        <div className="flex items-center justify-center h-8 w-8 bg-white border-1 border-gray-300 text-center rounded-lg">
                             <p className="text-lg font-medium"><img src={subicon} alt="" className="h-5 w-5"/></p>
                         </div>
                     </div>
