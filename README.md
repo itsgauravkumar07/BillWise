@@ -18,6 +18,18 @@ With BillWise, you can:
 ---
 
 ## 📸 Screenshots (Coming Soon)  
-_Soon._  
+
+- **Dashbord** : See all your subscriptions 
+![Home Page](./src/assets/Screenshots/home.png)
+
+
+- **Add Subscription** : Add your new subscription
+![Add Subscription Page](./src/assets/Screenshots/Add%20subscription.png)
+
+- **Setting page** : Change the currency from the setting page
+![Setting Page](./src/assets/Screenshots/setting.png)
+
+- **Edit subscription** : Here you can edit your subscription
+![Edit subscription page](./src/assets/Screenshots/editSub.png) 
 
 
