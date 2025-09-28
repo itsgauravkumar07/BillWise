@@ -21,7 +21,7 @@ With BillWise, you can:
 
 - **Dashbord** : See all your subscriptions
 
-![Home Page](./src/assets/Screenshots/home.png)
+![Home Page](./src/assets/Screenshots/home1.png)
 
 
 
