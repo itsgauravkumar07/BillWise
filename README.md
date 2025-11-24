@@ -48,6 +48,12 @@ https://bill-wise1.vercel.app/
 ## 📂 GitHub Repository
 https://github.com/itsgauravkumar07/BillWise
 
+## 📘 What I Learned
+- Managing state effectively using React
+- Structuring UI using Tailwind CSS
+- Creating reusable components
+- Handling user interactions and dynamic UI
+
 ## 📦 Setup & Installation
 
 ```bash
