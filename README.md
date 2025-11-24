@@ -1,21 +1,20 @@
-# BillWise 💳  
+# BillWise – Subscription Tracker App
 
-**BillWise** is a simple and clean **subscription manager app** that helps you track all your recurring expenses in one place.  
+BillWise is a simple and responsive subscription tracker built using React and Tailwind CSS.  
+It helps users manage their monthly/annual subscriptions and keep track of recurring expenses.
 
-With BillWise, you can:  
-- ✅ Add, edit, and delete subscriptions  
-- 📅 Track billing cycles (monthly/yearly)  
-- 💰 See total monthly & yearly spending  
-- 📌 Keep data safe in your browser (localStorage)  
+## 🚀 Features
+- Add, edit, and delete subscriptions
+- Track monthly and yearly costs
+- LocalStorage persistence (data stays after refresh)
+- Clean and responsive UI
+- Reusable and modular React components
 
----
-
-## 🔧 Tech Stack  
-- React (Vite) ⚛️  
-- Tailwind CSS 🎨  
-- LocalStorage for persistence 💾  
-
----
+## 🛠️ Tech Stack
+- React
+- Tailwind CSS
+- LocalStorage
+- Vite 
 
 ## 📸 Screenshots 
 
@@ -45,3 +44,14 @@ With BillWise, you can:
 ## Live link 🔗
 
 https://bill-wise1.vercel.app/
+
+## 📂 GitHub Repository
+https://github.com/itsgauravkumar07/BillWise
+
+## 📦 Setup & Installation
+
+```bash
+git clone https://github.com/itsgauravkumar07/BillWise.git  
+cd BillWise  
+npm install  
+npm run dev
